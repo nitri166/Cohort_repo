@@ -3,18 +3,15 @@
 */
 
 function wait(n) {
-    const p = new Promise((resolve, reject) => {
+    const p = new Promise((resolve) => {
         setTimeout((error) => {
-            if (!error) {
+            
                 resolve();
-            } else {
-                reject();
-            }
+        
         }, n * 1000);
     });
 }
 
-const ans = wait(2);
-ans.then();
+
 
 module.exports = wait;
