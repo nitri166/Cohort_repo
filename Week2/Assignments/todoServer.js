@@ -72,24 +72,17 @@ app.put('/todos/:id', (req, res) => {
   const Itodo = todos.findIndex(t => t.id === parseInt(req.params.id))
   if (Itodo === -1) {
     res.status(404).send("Not Found")
-
   }
-
-
-
   else {
-
     todos[Itodo].title = req.body.title
     todos[Itodo].description = req.body.description
     todos[Itodo].completed = req.body.completed
-
     res.status(200).send("Done");
 
   }
 })
 
 // post request
-
 app.post('/todos', (req, res) => {
   const newTodo = {
     id: Math.floor(Math.random() * 100000),
@@ -101,7 +94,7 @@ app.post('/todos', (req, res) => {
   todos.push(newTodo);
   res.status(201).json(`{id: ${newTodo.id}}`);
 })
-
+//delete request
 app.delete('/todos/:id', (req, res) => {
   const Itodo = todos.findIndex(t => t.id === parseInt(req.params.id))
   if (Itodo === -1) {
